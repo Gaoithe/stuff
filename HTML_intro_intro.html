@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<title>HTML intro and HTML5 canvas play</title>
+<body>
+<h3>HTML intro and HTML5 canvas play</h3>
+
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #c3c3c3;">
+Never mind some of these strange things for now.
+We are writing this html tutorial overview as an html document.
+It just seemed appropriate.
+This text is visible if the browser does not support the HTML5 canvas tag.
+</canvas>
+
+<p>HTML stands for Hyper-Text Markup Language.
+It is the language behind webpages.
+It is also found embedded in apps when visual content is presented.
+</p>
+
+<p>HTML is quite a simple document markup language.
+It can be read and edited in a normal text editor or with more complex tools.
+HTML became the format used for webpages because computers of all different types could view HTML documents.
+</p>
+
+<p>w3schools have some good interactive tutorials.
+<br>
+<h3>1. Start Here: with w3schools HTML intro</h3>
+<a href=http://www.w3schools.com/html/html_intro.asp>http://www.w3schools.com/html/html_intro.asp</a>
+On each page make sure and follow the "try it yourself" link.
+Change the code and hit "submit code" to see the results.
+The best way of learning languages is by playing or messing around with them.
+Keep a copy of your code and keep some tabs open of any particular messy code examples you create to show your mentor.
+</p>
+
+<p><b>Follow the w3 schools tutorials until you have a grasp of some basic html.
+ Or until you need a break!
+ Take a quick skim over chapters once your brain starts to turn to marshmallow goo.</b>
+Work through the chapters on:
+<ul>
+ <li>basic html document tags: html, head, title, body</li>
+ <li>formatting tags for headings, paragraph, line breaks: h1 h2 h3 h4 h5 h6 p br hr</li>
+ <li>other formatting tags e.g. bold italics smaller bigger superscript subscript: b i small sup sub</li>
+ <li>links tag: a href= </li>
+ <li>images tag: img src=</li>
+ <li>lists tags: ul li, ol li, dl dt dd</li>
+ <li>tables tags: table th tr td</li>
+ <li>some weird things, e.g. &lt; &gt; &nbsp;</li>
+ <li>forms tags: form input </li>
+</ul>
+Finish up with: <a href=http://www.w3schools.com/html/html_quick.asp>HTML Quick-Reference</a>.
+i.e. all there is to know about html on one page.
+It's quite simple really. Isn't it :).
+</p>
+
+<h3>2. HTML is an important STANDARD</h3>
+<p>HTML is an agreed standard.
+Standards are very important for different computer systems to communicate with each other.
+One standard is good.
+More than one standard and things start getting messy.
+Even when one standard is agreed things are always changing to make them better so you end up with some different versions of the same standard. It is very hard to have one useful standard and keep one agreed standard.
+<a href=http://xkcd.com/927/>XKCD on standards evolution</a>
+</p>
+<p>
+The W3C HTML working group is a collection of  people from industry and academia.
+Changes to html standard are proposed, tested, discussed and eventually agreed by this group.
+<a href=http://www.w3.org/2000/09/dbwg/details?group=40318&public=1>Who are the HTML working group?</a>
+ <pre>
+   503 group participants,
+   503 in good standing,
+   295 participants from 82 organizations
+   208 Invited Experts
+ </pre>
+</p>
+
+<p>
+HTML history was caught up in early web development Microsoft Internet Explorer vs Netscape/Mozilla wars.
+In particular the way time and dates was implemented in javascript in different browsers led to some strange problems as well as frustration for web page developers.
+<a href=http://en.wikipedia.org/wiki/Browser_wars>The wars continue to this very day.</a>
+<a href=http://diveintohtml5.info/past.html>Some interesting detail on HTML history. If you're cRaZy!</a>
+<a href=http://en.wikipedia.org/wiki/HTML>Boring wikipedia HTML info.</a>
+<blink>e.g. Tags for annoying blinking text never became part of the standard although they are still supported in some browsers!</blink>
+<a href=http://en.wikipedia.org/wiki/Blink_element>Wikipedia:the blink element</a>
+</p><p>HTML has been around since 1990.
+Over the years various additions have been made.
+HTML5 is the latest addition:
+  <a href=http://www.w3schools.com/html/html5_new_elements.asp>w3schools HTML5 new elements</a>.
+</p>
+
+<p>Each version of the HTML language . . .
+<ul>
+ <li>keeps the core elements the same,</li>
+ <li>removes or changes some elements which are not much used.</li>
+ <li>adds elements to the language
+ <br>e.g. HTML5 adds some basic graphics capability to the language.
+  <a href=http://www.w3schools.com/html/html5_new_elements.asp>w3schools HTML5 new elements</a></li>
+</ul>
+</p>
+
+<h3>3. Jump in Here: to w3schools HTML5 canvas object tutorial</h3>
+<a href=http://www.w3schools.com/html/html5_canvas.asp>http://www.w3schools.com/html/html5_canvas.asp</a>
+
+<p><b>Follow the w3 schools tutorial for canvas.
+ Take a look at the other HTML5 elements chapters also.
+ Take a rest as soon as your brain starts to turn to marshmallow goo!</b>
+
+<p>Now in our HTML we embed some javascript which does some painting in our canvas object.
+(But you cannot see that when the HTML is rendered.)
+</p>
+
+<script>
+
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.fillStyle="#00FFFF";
+ctx.fillRect(0,25,1500,25);
+ctx.fillStyle="#00FF00";
+ctx.fillRect(150,0,100,450);
+ctx.fillStyle="#FF0000";
+ctx.fillRect(0,225,1500,25);
+ctx.fillStyle="#FF00FF";
+ctx.fillRect(0,325,1500,25);
+
+// circle
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+
+
+// swiped from http://www.w3schools.com/html/html5_canvas.asp
+
+    // plain red rectangle
+    ctx.fillStyle="#FF0000";
+    ctx.fillRect(20,20,100,50);
+
+    // rectangle filled with black to white gradient along diagonal
+    var grd=ctx.createLinearGradient(140,20,240,70);
+    grd.addColorStop(0,"black");
+    grd.addColorStop(1,"white");
+    ctx.fillStyle=grd;
+    ctx.fillRect(140,20,100,50);
+
+    // rectangle filled with black to white gradient top to bottom
+    var grd=ctx.createLinearGradient(240,20,240,70);
+    grd.addColorStop(0,"black");
+    grd.addColorStop(1,"white");
+    ctx.fillStyle=grd;
+    ctx.fillRect(240,20,100,50);
+
+    // rectangle filled with black to white gradient L to R
+    var grd=ctx.createLinearGradient(340,20,440,20);
+    grd.addColorStop(0,"black");
+    grd.addColorStop(1,"white");
+    ctx.fillStyle=grd;
+    ctx.fillRect(340,20,100,50);
+   
+    // rectangle filled with multiple colour gradient L to R
+    var grd2=ctx.createLinearGradient(20,90,120,90);
+    grd2.addColorStop(0,"black");
+    grd2.addColorStop("0.3","magenta");
+    grd2.addColorStop("0.5","blue");
+    grd2.addColorStop("0.6","green");
+    grd2.addColorStop("0.8","yellow");
+    grd2.addColorStop(1,"red");
+    ctx.fillStyle=grd2;
+    ctx.fillRect(20,90,100,50);
+   
+    // text "Smile" filled with multiple colour gradient L to R
+    ctx.font="30px Verdana";
+    var grd3=ctx.createLinearGradient(40,100,440,90);
+    grd3.addColorStop(0,"black");
+    grd3.addColorStop("0.3","magenta");
+    grd3.addColorStop("0.6","blue");
+    grd3.addColorStop("0.8","green");
+    grd3.addColorStop(1,"red");
+    ctx.strokeStyle=grd3;
+    ctx.strokeText("We like making a MeSsY MesS!",10,220);
+
+
+</script>
+
+
+</body>
+</html>
